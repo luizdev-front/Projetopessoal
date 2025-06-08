@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #525252;
     color: #333;
 }
 
@@ -92,18 +92,47 @@ section {
 
 .portfolio h2 {
     font-size: 2em;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .portfolio-item {
-    display: inline-block;
-    width: 45%;
-    margin: 10px;
+    width: 280px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
 }
 
 .portfolio-item img {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
+    display: block;
+}
+
+.portfolio-item p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
 }
 
 /* Contato */
@@ -127,7 +156,7 @@ section {
 }
 
 .contato button {
-    background-color: #007BFF;
+    background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -135,7 +164,7 @@ section {
 }
 
 .contato button:hover {
-    background-color: #0056b3;
+    background-color: #007BFF;
 }
 
 /* Footer */
