@@ -1,14 +1,13 @@
-function enviarForm() {
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const mensagem = document.getElementById('mensagem').value;
+   document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    // Validação simples
-    if (!nome || !email || !mensagem) {
-        alert('Todos os campos são obrigatórios!');
-        return;
-    }
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
 
-    alert('Formulário enviado com sucesso!');
-    // Aqui você pode adicionar a lógica para enviar o formulário via API ou email
-}
+    const numeroWhatsApp = '5513988799046'; // Seu número com DDI (55) e DDD, sem espaços
+    const texto = `Olá, meu nome é ${nome}.%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, '_blank');
+  });
