@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #525252;
@@ -13,7 +17,7 @@ body {
 /* Header */
 header {
     background-color: #333;
-    color: #fff;
+    color:#525252;
     padding: 20px 0;
 }
 
@@ -27,6 +31,7 @@ header .container {
 
 header h1 {
     font-size: 2em;
+    color: #f9f9f9;
 }
 
 nav ul {
@@ -135,39 +140,75 @@ section {
     height: 100%;
 }
 
-/* Contato */
-.contato form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #525252; /* ou #525252 se preferir combinar com o resto */
 }
 
-.contato label {
-    margin-top: 10px;
+#formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+.contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color:#525252; 
+}   
+#formulario h2 {
+  text-align: center;
+  margin-bottom: 10px;
+
 }
 
-.contato input,
-.contato textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Labels e campos */
+#formulario label {
+  font-weight: bold;
 }
 
-.contato button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+#formulario input,
+#formulario textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  background-color: #f8f8f8;
+  transition: border 0.3s ease;
 }
 
-.contato button:hover {
-    background-color: #007BFF;
+#formulario input:focus,
+#formulario textarea:focus {
+  outline: none;
+  border-color: #25D366;
 }
 
-/* Footer */
+/* Botão */
+#formulario button {
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#formulario button:hover {
+  background-color: #1ebe5d;
+}  
 footer {
     background-color: #333;
     color: #fff;
