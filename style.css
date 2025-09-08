@@ -1,251 +1,120 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Suavidade ao rolar */
+html {
+  scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Containers */
-.container {
-  width: 85%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Header */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8em;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  margin-left: 20px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1em;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: #007BFF;
-}
-
-/* Home */
+/* Hero com gradiente animado */
 .home {
-  background: linear-gradient(135deg, #007BFF, #0056b3);
+  background: linear-gradient(-45deg, #007BFF, #00C6FF, #25D366, #0056b3);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
 }
 
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Texto com animação suave */
 .home h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5em;
+  font-size: 2.8em;
   margin-bottom: 20px;
+  animation: fadeInDown 1.2s ease-out;
 }
-
 .home p {
   font-size: 1.2em;
   margin-bottom: 30px;
+  animation: fadeInUp 1.5s ease-out;
 }
 
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botão chamativo */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: #25D366;
+  padding: 14px 28px;
+  background: #25D366;
   color: #fff;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 50px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(37,211,102,0.6);
 }
-
 .btn:hover {
-  background-color: #1ebe5d;
+  background: #1ebe5d;
+  box-shadow: 0 0 25px rgba(37,211,102,0.9);
+  transform: scale(1.05);
 }
 
-/* Serviços */
-.servicos {
-  padding: 60px 20px;
-}
-
-.servicos h2 {
-  text-align: center;
-  font-size: 2.2em;
-  margin-bottom: 40px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
+/* Cards dos serviços */
 .service {
   background: #fff;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 30px 20px;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-
 .service:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Portfólio */
-.portfolio {
-  background: #f9f9f9;
-  padding: 60px 20px;
-}
-
-.portfolio h2 {
-  text-align: center;
-  font-size: 2.2em;
-  margin-bottom: 40px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.portfolio-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-.portfolio-item img {
-  width: 100%;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.1);
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  width: 100%;
-  padding: 12px;
-  text-align: center;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover .overlay {
-  opacity: 1;
-}
-
-/* Contato */
+/* Contato com dark elegante */
 .contato {
-  background: #333;
+  background: linear-gradient(135deg, #222, #111);
   color: #fff;
-  padding: 60px 20px;
+  padding: 80px 20px;
   display: flex;
   justify-content: center;
 }
 
 #formulario {
-  background: #444;
-  padding: 30px;
-  border-radius: 12px;
+  background: #1c1c1c;
+  padding: 40px;
+  border-radius: 16px;
   width: 100%;
-  max-width: 400px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  max-width: 420px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-#formulario h2 {
-  margin-bottom: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-#formulario label {
-  font-weight: bold;
-  margin-top: 10px;
-  display: block;
-}
-
+/* Inputs glow */
 #formulario input,
 #formulario textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1em;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #fff;
 }
-
 #formulario input:focus,
 #formulario textarea:focus {
-  outline: 2px solid #25D366;
+  border-color: #25D366;
+  box-shadow: 0 0 10px rgba(37,211,102,0.6);
 }
 
+/* Botão WhatsApp pulsando */
 #formulario button {
-  margin-top: 20px;
   background: #25D366;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  border-radius: 8px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  width: 100%;
+  box-shadow: 0 0 15px rgba(37,211,102,0.6);
+  animation: pulse 1.5s infinite;
 }
-
 #formulario button:hover {
   background: #1ebe5d;
 }
-
-/* Footer */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 15px rgba(37,211,102,0.6); }
+  50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(37,211,102,0.9); }
+  100% { transform: scale(1); box-shadow: 0 0 15px rgba(37,211,102,0.6); }
 }
-
