@@ -181,7 +181,23 @@ section h2 {
 .portfolio-item:hover .overlay {
   opacity:1;
 }
+/* FAQ Acordeão */
+.faq-item p {
+  max-height: 0; /* escondido inicialmente */
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 0; /* padding será animado */
+}
 
+.faq-item.active p {
+  max-height: 200px; /* altura máxima expandida */
+  padding: 10px 0;
+}
+
+/* Cursor indicando clicável */
+.faq-item.toggle {
+  cursor: pointer;
+}
 /* Contato */
 .contato {
   background: linear-gradient(135deg, #222, #111);
