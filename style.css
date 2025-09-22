@@ -181,22 +181,90 @@ section h2 {
 .portfolio-item:hover .overlay {
   opacity:1;
 }
-/* FAQ Acordeão */
+/* Fundo futurista */
+body {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #e0e0e0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Títulos neon */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #00ffea;
+  text-shadow: 0 0 5px #00ffea, 0 0 15px #00ffea;
+}
+
+/* Botão futurista */
+.btn {
+  background: #00ffea;
+  color: #0f0f0f;
+  font-weight: bold;
+  padding: 14px 28px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #00ffea, 0 0 30px #00ffea;
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffea, 0 0 50px #00ffea;
+}
+
+/* Cards de serviço futurista */
+.service {
+  background: #1c1c1c;
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 234, 0.3), 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.service:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 40px #00ffea, 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* FAQ futurista */
+.faq-item {
+  background: #1a1a1a;
+  border-left: 3px solid #00ffea;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.faq-item:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 0 20px #00ffea;
+}
 .faq-item p {
-  max-height: 0; /* escondido inicialmente */
+  max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 0; /* padding será animado */
+  padding: 0 0;
+  color: #ccc;
 }
-
 .faq-item.active p {
-  max-height: 200px; /* altura máxima expandida */
+  max-height: 200px;
   padding: 10px 0;
 }
-
-/* Cursor indicando clicável */
-.faq-item.toggle {
+.faq-item h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+}
+.faq-item .arrow {
+  transition: transform 0.3s ease;
+}
+.faq-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .faq h2, h1, h3 { font-size: 1.6em; }
+  .service { padding: 20px 15px; }
 }
 /* Contato */
 .contato {
