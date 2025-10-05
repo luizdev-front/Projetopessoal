@@ -287,14 +287,15 @@ footer {
 
 /* Responsividade */
 @media (max-width: 1024px) {
-  header .container { flex-direction: column; gap: 10px; }
+  header .container { 
+gap: 10px; }
   .home { padding: 100px 20px; }
   section h2 { font-size: 2em; }
 }
 @media (max-width: 768px) {
   .home h2 { font-size: 1.8em; }
   .home p { font-size: 1em; }
-  nav ul { flex-direction: column; gap: 10px; }
+  
   .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
   #formulario { padding: 30px; }
 }
